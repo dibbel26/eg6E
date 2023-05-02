@@ -15,7 +15,7 @@ depends=('java-runtime-headless=8' 'tmux' 'sudo' 'bash' 'awk' 'sed')
 optdepends=("tar: needed in order to create world backups"
             "netcat: required in order to suspend an idle server")
 makedepends=('unzip')
-backup=('etc/conf.d/eg6E')
+backup=('etc/conf.d/${_game}')
 #install="${pkgname}.install"
 source=("minecraft-server-${_mng_ver}.tar.gz"::"https://github.com/Edenhofer/minecraft-server/archive/refs/tags/v${_mng_ver}.tar.gz"
         "Enigmatica6ExpertServer-${_eg_ver}.zip"::"https://mediafilez.forgecdn.net/files/4437/745/Enigmatica6ExpertServer-1.8.0.zip")
@@ -64,7 +64,8 @@ build() {
   cd ${srcdir}/Enigmatica6ExpertServer-${_eg_ver}
   bash ./start-server.sh
   echo "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula)." > eula.txt
-  echo "#Sat Apr 15 03:36:55 GMT+2 2023" >> eula.txt
+  echo "$(date +%c)" >> eula.txt
+  # echo "#Sat Apr 15 03:36:55 GMT+2 2023" >> eula.txt
   echo "eula=false" >> eula.txt
   cd ${srcdir}
 
