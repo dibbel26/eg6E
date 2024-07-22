@@ -109,8 +109,8 @@ package() {
   -print0 | xargs -0 -i@ install -o ${_game} -g ${_game} -Dm664 "@" "${pkgdir}${_server_root}/@"
   #-print0 | xargs -0 -i@ install -o ${_game} -g ${_game} -Dm644 "@" "${pkgdir}${_server_root}/@"
   
-  chown -R ${_game}:${_game} ${pkgdir}${_sever_root}
-  chmod g+rw -R ${pkgdir}${_serevr_root}
+  chown -R ${_game}:${_game} ${pkgdir}${_server_root}
+  chmod g+rw -R ${pkgdir}${_server_root}
 
   echo "linking main executables..."
   ln -s "forge-${pkgver}-36.2.39.jar" "${pkgdir}${_server_root}/${_game}_server.jar"
