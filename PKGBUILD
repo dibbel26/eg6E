@@ -1,6 +1,6 @@
 _game="eg6E"
 _server_root="/srv/${_game}"
-#_conf_dir="/bin/conf.d/${_game}d"
+#_conf_dir="/etc/conf.d/${_game}d" not sure if I added that?
 
 pkgname="${_game}-server"
 pkgver=1.16.5
